@@ -1,5 +1,6 @@
 Mboddy::Application.routes.draw do
 
+  get "sessions/new"
 root 'home#index'
 resources :result_render
   resources :microposts
