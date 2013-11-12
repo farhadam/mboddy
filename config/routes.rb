@@ -1,14 +1,18 @@
 Mboddy::Application.routes.draw do
 
-  get "sessions/new"
 root 'home#index'
-resources :result_render
-  resources :microposts
+resources :microposts
 
-  resources :users
-  match '/signup', to: 'users#new', via: 'get'
+resources :sessions, only: [:new, :create, :destroy]
 
-  
+resources :users
+resources :home
+
+match '/signup',  to: 'users#new',            via: 'get'
+match '/signin',  to: 'sessions#new',         via: 'get'
+match '/signout', to: 'sessions#destroy',     via: 'delete'
+match '/help',    to: 'home#help',            via: 'get'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

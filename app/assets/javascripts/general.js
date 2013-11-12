@@ -4,7 +4,6 @@ $(window).load(function(){
 	$("#btn-run").on('click', function(){
 	    scriptJS = $("#scriptJS").val();
 	    libsJS = $("#libsJS").val();
-	    eval(HTML);
 	    eval(libsJS);
 	    eval(scriptJS);
 	    main();
