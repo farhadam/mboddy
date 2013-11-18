@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112172001) do
+ActiveRecord::Schema.define(version: 20131116195943) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20131112172001) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.string   "password_digest"
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"

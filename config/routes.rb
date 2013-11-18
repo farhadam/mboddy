@@ -1,7 +1,7 @@
 Mboddy::Application.routes.draw do
 
 root 'home#index'
-resources :microposts
+resources :microposts, only: [:create, :destroy]
 
 resources :sessions, only: [:new, :create, :destroy]
 
